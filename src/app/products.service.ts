@@ -5,7 +5,7 @@ import { Product } from './shared/product.model';
 @Injectable()
 export class ProductsService {
 
-    private url = 'http://localhost:3000/api/products';
+    private url = 'http://localhost:3000/api/products/';
 
     constructor(private http: HttpClient) { }
 
@@ -15,7 +15,7 @@ export class ProductsService {
             .then((resposta: any) => resposta);
     }
 
-    public getProductById(id): Promise<Product[]> {
+    public getProductById(id): Promise<Product> {
         return this.http.get(this.url + id)
             .toPromise()
             .then((resposta: any) => resposta);
