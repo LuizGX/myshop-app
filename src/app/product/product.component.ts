@@ -20,8 +20,6 @@ export class ProductComponent implements OnInit {
     this.productService.getProductById(this.id).then((product) => {
       this.product = product;
     });
-
-
   }
 
 }
