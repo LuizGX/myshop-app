@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-4">
+        <div class="card h-100" *ngFor="let product of products">
+            <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.product_name }}</h5>
+                <h6 class="card-text">ID: {{ product.product_id }}</h6>
+                <p class="card-text">Quantidade: {{ product.product_quantity }}</p>
+                <div class="row">
+                    <button class="btn btn-warning col-md-6" routerLink="/product" routerLinkActive="active">Detalhes
+                        ➝</button>
+                    <button class="btn btn-primary col-md-6" routerLink="/product" routerLinkActive="active">+
+                        Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
