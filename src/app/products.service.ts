@@ -20,4 +20,8 @@ export class ProductsService {
             .toPromise()
             .then((resposta: any) => resposta);
     }
+
+    public newProduct(product): Promise<any> {
+        return this.http.post(this.url, product, { responseType: 'text' }).toPromise().then((res) => res);
+    }
 }
