@@ -6,11 +6,10 @@
                 <h5 class="card-title">{{ product.product_name }}</h5>
                 <p class="card-text">Quantidade: {{ product.product_quantity }}</p>
                 <div class="row">
-                    <button class="btn btn-warning col-md-6" [routerLink]="['/product', product.product_id]"
-                        routerLinkActive="active">Detalhes
-                        ➝</button>
-                    <button class="btn btn-primary col-md-6" routerLink="/product" routerLinkActive="active">+
-                        Carrinho</button>
+                    <button class="btn btn-primary col-md-6" [routerLink]="['/editar', product.product_id]"
+                        routerLinkActive="active">Editar</button>
+                    <button class="btn btn-danger col-md-6" routerLink="/product"
+                        routerLinkActive="active">Remover</button>
                 </div>
             </div>
         </div>

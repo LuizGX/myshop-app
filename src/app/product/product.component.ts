@@ -10,14 +10,14 @@ import { Product } from '../shared/product.model';
   providers: [ProductsService]
 })
 export class ProductComponent implements OnInit {
-  public id: number;
+  public product_id: number;
   public product: Product;
 
   constructor(private route: ActivatedRoute, private productService: ProductsService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['product_id'];
-    this.productService.getProductById(this.id).then((product) => {
+    this.product_id = this.route.snapshot.params['product_id'];
+    this.productService.getProductById(this.product_id).then((product) => {
       this.product = product;
     });
   }
