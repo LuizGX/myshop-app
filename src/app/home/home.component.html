@@ -1,15 +1,39 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-md-4">
-        <div class="card h-100" *ngFor="let product of products">
-            <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" class="card-img-top" alt="...">
+        <div class="card h-100" *ngFor="let product of products; let arrayIndex = index;">
+            <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg"
+                [routerLink]="['/product', product.product_id]" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ product.product_name }}</h5>
                 <p class="card-text">Quantidade: {{ product.product_quantity }}</p>
+                <p class="card-text">Preço: {{ product.product_price }}</p>
+                <p class="card-text">Detalhes: {{ product.product_details }}</p>
                 <div class="row">
                     <button class="btn btn-primary col-md-6" [routerLink]="['/editar', product.product_id]"
                         routerLinkActive="active">Editar</button>
-                    <button class="btn btn-danger col-md-6" routerLink="/product"
-                        routerLinkActive="active">Remover</button>
+                    <button class="btn btn-danger col-md-6" data-toggle="modal" data-target="#exampleModal"
+                        (click)="setRemove(product, arrayIndex)">Remover</button>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Remover Produto</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Tem certeza de que deseja remover este produto?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" (click)="removeProduct()" data-dismiss="modal"
+                                class="btn btn-danger">Remover</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

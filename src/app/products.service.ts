@@ -24,4 +24,16 @@ export class ProductsService {
     public newProduct(product): Promise<any> {
         return this.http.post(this.url, product, { responseType: 'text' }).toPromise().then((res) => res);
     }
+
+    public editProduct(product): Promise<any> {
+        return this.http.post(this.url, product, { responseType: 'text' }).toPromise().then((res) => res);
+    }
+
+    public deleteProduct(id) {
+        console.log(this.url + id);
+
+        return this.http.delete(this.url + id, { responseType: 'text' })
+            .toPromise()
+            .then((resposta: any) => resposta);
+    }
 }

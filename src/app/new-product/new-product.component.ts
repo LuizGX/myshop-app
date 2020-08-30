@@ -11,13 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NewProductComponent implements OnInit {
 
-  public newProductForm: FormGroup;
+  public productForm: FormGroup;
   public product_id: number;
   constructor(private productService: ProductsService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.product_id = this.route.snapshot.params['product_id'];
-    this.newProductForm = this.formBuilder.group({
+    this.productForm = this.formBuilder.group({
       'product_name': ['', Validators.required],
       'product_quantity': ['', Validators.required],
       'product_details': ['', Validators.required],
@@ -26,16 +26,22 @@ export class NewProductComponent implements OnInit {
 
     if (this.product_id) {
       this.productService.getProductById(this.product_id).then((productInfo) => {
-        this.newProductForm.patchValue(productInfo);
+        this.productForm.patchValue(productInfo);
       });
     }
 
   }
 
   public createProduct(): void {
-    this.productService.newProduct(this.newProductForm.value).then((response) => {
-      console.log(response);
-    })
+    if (!this.product_id) {
+      this.productService.newProduct(this.productForm.value).then((response) => {
+        console.log(response);
+      });
+    } else {
+      this.productService.editProduct(this.productForm.value).then((response) => {
+        console.log(response);
+      });
+    }
   }
 
 }

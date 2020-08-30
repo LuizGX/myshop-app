@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="newProductForm" (ngSubmit)="createProduct()">
+    <form [formGroup]="productForm" (ngSubmit)="createProduct()">
         <div class="form-group">
             <label for="product_name">Nome</label>
             <input type="text" formControlName="product_name" class="form-control" id="product_name">
