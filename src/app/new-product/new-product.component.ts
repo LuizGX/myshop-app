@@ -25,7 +25,7 @@ export class NewProductComponent implements OnInit {
     });
 
     if (this.product_id) {
-      this.productService.getProductById(2).then((productInfo) => {
+      this.productService.getProductById(this.product_id).then((productInfo) => {
         this.newProductForm.patchValue(productInfo);
       });
     }
