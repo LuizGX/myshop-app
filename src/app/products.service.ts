@@ -25,8 +25,8 @@ export class ProductsService {
         return this.http.post(this.url, product, { responseType: 'text' }).toPromise().then((res) => res);
     }
 
-    public editProduct(product): Promise<any> {
-        return this.http.post(this.url, product, { responseType: 'text' }).toPromise().then((res) => res);
+    public editProduct(id, product): Promise<any> {
+        return this.http.put(this.url + id, product, { responseType: 'text' }).toPromise().then((res) => res);
     }
 
     public deleteProduct(id) {
