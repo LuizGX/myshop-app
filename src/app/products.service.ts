@@ -30,8 +30,6 @@ export class ProductsService {
     }
 
     public deleteProduct(id) {
-        console.log(this.url + id);
-
         return this.http.delete(this.url + id, { responseType: 'text' })
             .toPromise()
             .then((resposta: any) => resposta);
