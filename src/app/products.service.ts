@@ -21,6 +21,12 @@ export class ProductsService {
             .then((resposta: any) => resposta);
     }
 
+    public getProductsByName(name): Promise<Product[]> {
+        return this.http.get(this.url + 'search/' + name)
+            .toPromise()
+            .then((resposta: any) => resposta);
+    }
+
     public newProduct(product): Promise<any> {
         return this.http.post(this.url, product, { responseType: 'text' }).toPromise().then((res) => res);
     }
