@@ -1,6 +1,25 @@
-<div *ngIf="product !== undefined">
-    <h1>{{ product.product_name }}</h1>
-    <p>{{ product.product_quantity }}</p>
-    <p>{{ product.product_details }}</p>
-    <p>{{ product.product_price }}</p>
+<div class="container mt-3">
+    <div *ngIf="product !== undefined" class="row">
+        <div class="shadow-sm p-3 col-md-6">
+            <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" class="card-img-top" alt="...">
+            <div class="row p-5">
+                <div class="col-md-6">
+                    <img src="https://mcdn.belezanaweb.com.br/image/upload/f_auto,fl_progressive,q_auto:best,w_1800,c_limit/e_trim/v1/imagens/5/clinique-pop-lip-colour-primer-nude-batom-cremoso-5g-29341-5840632337619005565.png"
+                        class="card-img-top" alt="...">
+                </div>
+                <div class="col-md-6">
+                    <img src="https://i.pinimg.com/originals/6d/a6/43/6da6434b617ce98cd574a7785f22a979.jpg"
+                        class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+        <div class="shadow-sm p-3 col-md-6">
+            <h1 class="text-center display-4">{{ product.product_name }}</h1>
+            <h2>R$ {{ product.product_price }}</h2>
+            <div class="">
+                <p>Quantidade: {{ product.product_quantity }}</p>
+                <p><strong>Descrição:</strong> {{ product.product_details }}</p>
+            </div>
+        </div>
+    </div>
 </div>
