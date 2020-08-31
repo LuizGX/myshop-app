@@ -36,6 +36,7 @@ export class NewProductComponent implements OnInit {
     if (!this.product_id) {
       this.productService.newProduct(this.productForm.value).then((response) => {
         console.log(response);
+        this.productForm.reset();
       });
     } else {
       this.productService.editProduct(this.product_id, this.productForm.value).then((response) => {
