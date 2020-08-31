@@ -3,18 +3,34 @@
         <div class="form-group">
             <label for="product_name">Nome</label>
             <input type="text" formControlName="product_name" class="form-control" id="product_name">
+            <div *ngIf="productForm.controls.product_name.errors?.required && productForm.controls.product_name.touched"
+                class="text-danger">
+                O nome é obrigatório.
+            </div>
         </div>
         <div class="form-group">
             <label for="product_quantity">Quantidade</label>
             <input type="text" formControlName="product_quantity" class="form-control" id="product_quantity">
+            <div *ngIf="productForm.controls.product_quantity.errors?.required && productForm.controls.product_quantity.touched"
+                class="text-danger">
+                A quantidade é obrigatória.
+            </div>
         </div>
         <div class="form-group">
             <label for="product_price">Preço</label>
             <input type="text" formControlName="product_price" class="form-control" id="product_price">
+            <div *ngIf="productForm.controls.product_price.errors?.required && productForm.controls.product_price.touched"
+                class="text-danger">
+                O preço é obrigatório.
+            </div>
         </div>
         <div class="form-group">
             <label for="product_details">Detalhes</label>
             <textarea formControlName="product_details" class="form-control" id="product_details" rows="3"></textarea>
+            <div *ngIf="productForm.controls.product_details.errors?.required && productForm.controls.product_details.touched"
+                class="text-danger">
+                A descrição é obrigatória.
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
