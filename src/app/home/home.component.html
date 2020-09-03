@@ -1,6 +1,6 @@
 <div class="row row-cols-1 row-cols-md-5 p-5">
     <div class="card h-100" *ngFor="let product of products; let arrayIndex = index;">
-        <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" [routerLink]="['/product', product.product_id]"
+        <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" [routerLink]="['/produto', product.product_id]"
             class="card-img-top" alt="...">
         <div class="card-body">
             <h2 class="card-title text-center">{{ product.product_name }}</h2>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="shadow w-25 mx-auto my-3 p-3">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <h2 class="text-center p-3">My Shop</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="clearfix">
+                <a href="#" class="float-right">Esqueceu a senha?</a>
+            </div>
+            <div class="form-group pt-3">
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                <button class="btn btn-info btn-block">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
