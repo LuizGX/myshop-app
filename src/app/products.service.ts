@@ -6,10 +6,11 @@ import { Product } from './shared/product.model';
 export class ProductsService {
 
     private url: string = 'http://localhost:3000/api/products/';
+    private token: string = localStorage.getItem('token');
     private httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Im5hbWUiLCJlbWFpbCI6ImVtYWlsQGVtYWlsLmNvbSJ9LCJpYXQiOjE1OTkwNzA2Mjl9.kkM0XuhMTh8XDCccE99QjT3zA-khLeGhvq-hWDihdIo',
+            Authorization: 'Bearer ' + this.token,
         })
     };
 
