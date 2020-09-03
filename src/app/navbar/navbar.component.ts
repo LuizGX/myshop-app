@@ -29,4 +29,9 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  logout() {
+    localStorage.removeItem('token')
+    console.log('sair');
+  }
+
 }
