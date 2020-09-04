@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginService } from '../login.service';
+
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [LoginService]
+  providers: [AuthService]
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
@@ -26,8 +27,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.value).then((token) => {
+      this.authService.login(this.loginForm.value).then((token) => {
         localStorage.setItem('token', token['token']);
+        console.log(localStorage.getItem('token'));
+
         this.router.navigateByUrl('/produtos');
       });
     }
