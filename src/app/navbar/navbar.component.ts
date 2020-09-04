@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product.model';
 import { ProductsService } from '../products.service';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,11 @@ import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class NavbarComponent implements OnInit {
   public products: Product[];
   public searchForm: FormGroup;
-  constructor(private productsService: ProductsService, private formBuilder: FormBuilder) { }
+  constructor(
+    private productsService: ProductsService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -30,7 +35,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/');
     console.log('sair');
   }
 
