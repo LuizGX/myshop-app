@@ -9,7 +9,7 @@ import { NewProductComponent } from './dashboard/new-product/new-product.compone
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'produto/:product_id', component: ProductComponent },
   {
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
