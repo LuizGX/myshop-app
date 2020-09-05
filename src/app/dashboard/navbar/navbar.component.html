@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="/produtos">Produtos</a>
+                <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/produtos">Produtos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="/novo">Novo Produto</a>
+                <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/novo">Novo Produto</a>
             </li>
         </ul>
         <form [formGroup]="searchForm" class="form-inline my-2 my-lg-0" (ngSubmit)="searchProductByName()">

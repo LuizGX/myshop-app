@@ -1,8 +1,7 @@
-<app-navbar></app-navbar>
 <div class="row row-cols-1 row-cols-md-5 p-5">
     <div class="card h-100" *ngFor="let product of products; let arrayIndex = index;">
-        <img src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" [routerLink]="['/produto', product.product_id]"
-            class="card-img-top" alt="...">
+        <a [routerLink]="['/dashboard/produto', product.product_id]"> <img
+                src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" class="card-img-top" alt="..."></a>
         <div class="card-body">
             <h2 class="card-title text-center">{{ product.product_name }}</h2>
             <p class="card-text">Quantidade: {{ product.product_quantity }}</p>
@@ -11,7 +10,7 @@
                 {{ (product.product_details.length>6)? (product.product_details | slice:0:80)+'...':(product.product_details) }}
             </p>
             <div class="row">
-                <button class="btn btn-primary col-md-6" [routerLink]="['/editar', product.product_id]"
+                <button class="btn btn-primary col-md-6" [routerLink]="['/dashboard/editar', product.product_id]"
                     routerLinkActive="active">Editar</button>
                 <button class="btn btn-danger col-md-6" data-toggle="modal" data-target="#exampleModal"
                     (click)="setRemove(product, arrayIndex)">Remover</button>

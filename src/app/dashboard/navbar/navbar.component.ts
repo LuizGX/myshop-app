@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../shared/product.model';
-import { ProductsService } from '../products.service';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProductsService } from 'src/app/products.service';
+import { Product } from 'src/app/shared/product.model';
 
 @Component({
   selector: 'app-navbar',

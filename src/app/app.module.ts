@@ -5,11 +5,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { NewProductComponent } from './new-product/new-product.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './dashboard/home/home.component';
+
+import { NewProductComponent } from './dashboard/new-product/new-product.component';
+import { NavbarComponent } from './dashboard/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     ProductComponent,
     NavbarComponent,
     NewProductComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
