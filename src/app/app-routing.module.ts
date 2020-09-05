@@ -6,9 +6,11 @@ import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { NewProductComponent } from './dashboard/new-product/new-product.component';
+import { ShopComponent } from './shop/shop.component';
 
 
 const routes: Routes = [
+  { path: '', component: ShopComponent },
   { path: 'login', component: LoginComponent },
   { path: 'produto/:product_id', component: ProductComponent },
   {
