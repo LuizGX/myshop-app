@@ -8,12 +8,18 @@ import { NewProductComponent } from './dashboard/new-product/new-product.compone
 import { ShopComponent } from './shop/shop.component';
 import { ShopProductDetailsComponent } from './shop/shop-product-details/shop-product-details.component';
 import { DashbProductDetailsComponent } from './dashboard/dashb-product-details/dashb-product-details.component';
+import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
 
 
 const routes: Routes = [
-  { path: '', component: ShopComponent },
+  {
+    path: '', component: ShopComponent,
+    children: [
+      { path: '', component: ShopHomeComponent },
+      { path: 'produto/:product_id', component: ShopProductDetailsComponent },
+    ]
+  },
   { path: 'login', component: LoginComponent },
-  { path: 'shop/produto/:product_id', component: ShopProductDetailsComponent },
   {
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
     children: [

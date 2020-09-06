@@ -15,6 +15,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopNavbarComponent } from './shop-navbar/shop-navbar.component';
 import { ShopProductDetailsComponent } from './shop/shop-product-details/shop-product-details.component';
 import { DashbProductDetailsComponent } from './dashboard/dashb-product-details/dashb-product-details.component';
+import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DashbProductDetailsComponent } from './dashboard/dashb-product-details/
     ShopComponent,
     ShopNavbarComponent,
     ShopProductDetailsComponent,
-    DashbProductDetailsComponent
+    DashbProductDetailsComponent,
+    ShopHomeComponent
   ],
   imports: [
     BrowserModule,
