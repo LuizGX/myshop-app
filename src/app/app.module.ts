@@ -5,7 +5,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
@@ -14,18 +13,21 @@ import { NewProductComponent } from './dashboard/new-product/new-product.compone
 import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShopNavbarComponent } from './shop-navbar/shop-navbar.component';
+import { ShopProductDetailsComponent } from './shop/shop-product-details/shop-product-details.component';
+import { DashbProductDetailsComponent } from './dashboard/dashb-product-details/dashb-product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductComponent,
     NavbarComponent,
     NewProductComponent,
     LoginComponent,
     DashboardComponent,
     ShopComponent,
-    ShopNavbarComponent
+    ShopNavbarComponent,
+    ShopProductDetailsComponent,
+    DashbProductDetailsComponent
   ],
   imports: [
     BrowserModule,

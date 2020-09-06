@@ -1,6 +1,7 @@
+<app-shop-navbar></app-shop-navbar>
 <div class="row row-cols-1 row-cols-md-5 p-5">
     <div class="card h-100" *ngFor="let product of products; let arrayIndex = index;">
-        <a [routerLink]="['/produto', product.product_id]"> <img
+        <a [routerLink]="['/shop/produto', product.product_id]"> <img
                 src="https://i.ytimg.com/vi/wjeEI2EVge4/maxresdefault.jpg" class="card-img-top" alt="..."></a>
         <div class="card-body">
             <p class="card-title text-center">{{ product.product_name }}</p>

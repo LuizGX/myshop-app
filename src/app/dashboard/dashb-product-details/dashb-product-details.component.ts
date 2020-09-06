@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { ProductsService } from '../products.service';
-import { Product } from '../shared/product.model';
+import { Product } from 'src/app/shared/product.model';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  selector: 'app-dashb-product-details',
+  templateUrl: './dashb-product-details.component.html',
+  styleUrls: ['./dashb-product-details.component.css'],
   providers: [ProductsService]
 })
-export class ProductComponent implements OnInit {
+export class DashbProductDetailsComponent implements OnInit {
   public product_id: number;
   public product: Product;
 
@@ -21,5 +21,4 @@ export class ProductComponent implements OnInit {
       this.product = product;
     });
   }
-
 }
